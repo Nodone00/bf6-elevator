@@ -13,7 +13,9 @@ The script creates the illusion of a working elevator by:
 
 The system supports multiple elevators, multiple players inside the same elevator, animated sliding doors, per-player screen fades, automatic interact points, and door sound effects.
 
-[![Test Example:](https://youtube.com)](https://youtu.be/cSQ4XaOBxG8)
+[![Test Example Video](https://img.youtube.com/vi/cSQ4XaOBxG8/hqdefault.jpg)](https://youtu.be/cSQ4XaOBxG8)
+
+[Watch the video on YouTube](https://youtu.be/cSQ4XaOBxG8)
 
 ---
 
