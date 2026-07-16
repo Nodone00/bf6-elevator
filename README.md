@@ -193,6 +193,8 @@ You do not need to create an interact point in Godot.
 
 ## Installation
 
+Use the script and .tscn (Godot file) found in the **release** folder of this repo.
+
 ### Step 1: Add the script to your project
 
 Create a TypeScript file in your Portal Project, in the Editor, such as:
