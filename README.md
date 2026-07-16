@@ -29,12 +29,10 @@ The system supports multiple elevators, multiple players inside the same elevato
 - [Integrating the event handlers](#integrating-the-event-handlers)
 - [Adding more elevators](#adding-more-elevators)
 - [Runtime sequence](#runtime-sequence)
-- [Testing checklist](#testing-checklist)
 - [Troubleshooting](#troubleshooting)
 - [Performance notes](#performance-notes)
 - [Important limitations](#important-limitations)
-- [Suggested file structure](#suggested-file-structure)
-- [Credits and license](#credits-and-license)
+- [Credits](#credits)
 
 ---
 
