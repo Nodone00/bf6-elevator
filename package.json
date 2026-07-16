@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "bundle": "bf6-portal-bundler --entrypoint ./src/main.ts --outDir ./dist"
+    "bundle": "bf6-portal-bundler --entrypoint ./src/main.ts --outDir ./release"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

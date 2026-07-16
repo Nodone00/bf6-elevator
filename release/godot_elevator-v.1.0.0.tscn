@@ -1,0 +1,612 @@
+[gd_scene format=3 uid="uid://bo3wghuqaq678"]
+
+[ext_resource type="PackedScene" path="res://objects/Gameplay/Common/HQ_PlayerSpawner.tscn" id="1_cera7"]
+[ext_resource type="PackedScene" uid="uid://jv31so3xcr7p" path="res://addons/bf_portal/portal_tools/types/PolygonVolume/PolygonVolume.tscn" id="2_y0oiy"]
+[ext_resource type="PackedScene" uid="uid://cneyjcqw4pess" path="res://objects/entities/SpawnPoint.tscn" id="3_sw3pr"]
+[ext_resource type="PackedScene" path="res://objects/Gameplay/Common/CombatArea.tscn" id="4_ty45e"]
+[ext_resource type="PackedScene" path="res://objects/Gameplay/Common/DeployCam.tscn" id="5_oprgd"]
+[ext_resource type="PackedScene" path="res://static/MP_Portal_Sand_Terrain.tscn" id="6_y5a6c"]
+[ext_resource type="PackedScene" path="res://static/MP_Portal_Sand_Assets.tscn" id="7_ne77g"]
+[ext_resource type="PackedScene" path="res://objects/architecture/FiringRange_Floor_01.tscn" id="8_y7eu4"]
+[ext_resource type="PackedScene" path="res://objects/props/FiringRange_Divider_02.tscn" id="9_in6og"]
+[ext_resource type="PackedScene" path="res://objects/props/FiringRange_MannequinRotation_01.tscn" id="10_k5nq8"]
+[ext_resource type="PackedScene" path="res://objects/props/FiringRange_MannequinRotation_02.tscn" id="11_lyhaa"]
+[ext_resource type="PackedScene" path="res://objects/props/FiringRange_Railing_01.tscn" id="12_umtpw"]
+[ext_resource type="PackedScene" path="res://objects/props/AntennaMastMetal_01.tscn" id="13_mv1df"]
+[ext_resource type="PackedScene" path="res://objects/props/BarrierStoneBlock_01_D.tscn" id="14_dm46y"]
+[ext_resource type="PackedScene" path="res://objects/architecture/FiringRange_Floor_A.tscn" id="15_xwedc"]
+[ext_resource type="PackedScene" path="res://objects/props/FiringRange_Mat_01.tscn" id="16_2xroj"]
+[ext_resource type="PackedScene" path="res://objects/props/FiringRange_FiringBarrier_01.tscn" id="17_tlk50"]
+[ext_resource type="PackedScene" path="res://objects/architecture/FiringRange_Ceiling_02.tscn" id="18_x4x36"]
+[ext_resource type="PackedScene" path="res://objects/gameplay/common/AreaTrigger.tscn" id="20_ty45e"]
+[ext_resource type="Script" uid="uid://ck5uniw0pl6u8" path="res://addons/bf_portal/portal_tools/types/PolygonVolume/PolygonVolume.gd" id="21_oprgd"]
+[ext_resource type="PackedScene" path="res://objects/props/HighwaySignPole_01.tscn" id="43_syyuf"]
+
+[node name="MP_Portal_Sand" type="Node3D" unique_id=106700626]
+
+[node name="TEAM_1_HQ" parent="." unique_id=1043937456 node_paths=PackedStringArray("HQArea", "InfantrySpawns") instance=ExtResource("1_cera7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.0207, 32.4003, -0.012538)
+AltTeam = 0
+ObjId = 1
+HQArea = NodePath("HQ_Team1")
+InfantrySpawns = [NodePath("SpawnPoint_1_1"), NodePath("SpawnPoint_1_2"), NodePath("SpawnPoint_1_3"), NodePath("SpawnPoint_1_4")]
+
+[node name="HQ_Team1" parent="TEAM_1_HQ" unique_id=1906228196 instance=ExtResource("2_y0oiy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+points = PackedVector2Array(5, 5, 5, -5, -5, -5, -5, 5)
+
+[node name="SpawnPoint_1_1" parent="TEAM_1_HQ" unique_id=163022846 instance=ExtResource("3_sw3pr")]
+transform = Transform3D(0.999884, 0, -0.0152535, 0, 1, 0, 0.0152535, 0, 0.999884, 0, 0, -3)
+
+[node name="SpawnPoint_1_2" parent="TEAM_1_HQ" unique_id=1353825451 instance=ExtResource("3_sw3pr")]
+transform = Transform3D(-0.9995, 0, -0.0316198, 0, 1, 0, 0.0316198, 0, -0.9995, 8.62467, 7.2597504, 8.193148)
+
+[node name="SpawnPoint_1_3" parent="TEAM_1_HQ" unique_id=1076097831 instance=ExtResource("3_sw3pr")]
+transform = Transform3D(-0.0428871, 0, 0.99908, 0, 1, 0, -0.99908, 0, -0.0428871, -3, 0, 0)
+
+[node name="SpawnPoint_1_4" parent="TEAM_1_HQ" unique_id=1779222420 instance=ExtResource("3_sw3pr")]
+transform = Transform3D(0.0841819, 0, -0.99645, 0, 1, 0, 0.99645, 0, 0.0841819, 0, 0, 3)
+
+[node name="TEAM_2_HQ" parent="." unique_id=990779706 node_paths=PackedStringArray("HQArea", "InfantrySpawns") instance=ExtResource("1_cera7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.194, 32.9783, -0.0373716)
+Team = 2
+AltTeam = 0
+ObjId = 2
+HQArea = NodePath("HQ_Team2")
+InfantrySpawns = [NodePath("SpawnPoint_2_1"), NodePath("SpawnPoint_2_2"), NodePath("SpawnPoint_2_3"), NodePath("SpawnPoint_2_4")]
+
+[node name="HQ_Team2" parent="TEAM_2_HQ" unique_id=1248656686 instance=ExtResource("2_y0oiy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+points = PackedVector2Array(5, 5, 5, -5, -5, -5, -5, 5)
+
+[node name="SpawnPoint_2_1" parent="TEAM_2_HQ" unique_id=2028699227 instance=ExtResource("3_sw3pr")]
+transform = Transform3D(0.87795, 0, -0.478754, 0, 1, 0, 0.478754, 0, 0.87795, 0, 0, -3)
+
+[node name="SpawnPoint_2_2" parent="TEAM_2_HQ" unique_id=745685118 instance=ExtResource("3_sw3pr")]
+transform = Transform3D(-0.997604, 0, 0.0691822, 0, 1, 0, -0.0691822, 0, -0.997604, 3, 0, 0)
+
+[node name="SpawnPoint_2_3" parent="TEAM_2_HQ" unique_id=1039474017 instance=ExtResource("3_sw3pr")]
+transform = Transform3D(0.162758, 0, 0.986666, 0, 1, 0, -0.986666, 0, 0.162758, -3, 0, 0)
+
+[node name="SpawnPoint_2_4" parent="TEAM_2_HQ" unique_id=1660003541 instance=ExtResource("3_sw3pr")]
+transform = Transform3D(-0.165771, 0, -0.986164, 0, 1, 0, 0.986164, 0, -0.165771, 0, 0, 3)
+
+[node name="CombatArea" parent="." unique_id=1584138593 node_paths=PackedStringArray("CombatVolume") instance=ExtResource("4_ty45e")]
+transform = Transform3D(0.9983857, 0, 0.056796897, 0, 1, 0, -0.056796897, 0, 0.9983857, 1.2791481, 0, -1.2202492)
+CombatVolume = NodePath("CombatVolume")
+
+[node name="CombatVolume" parent="CombatArea" unique_id=1907547749 instance=ExtResource("2_y0oiy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 43.0489, 0)
+points = PackedVector2Array(-450, -450, -450, 450, 450, 450, 450, -450)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1842264372]
+transform = Transform3D(0.01700449, 0.41082507, -0.9115558, -0.012587529, 0.9117034, 0.4106568, 0.9997762, 0.004491227, 0.020674367, -28.163397, 44.040478, 7.311093)
+
+[node name="DeployCam" parent="Camera3D" unique_id=907268294 instance=ExtResource("5_oprgd")]
+
+[node name="Static" type="Node3D" parent="." unique_id=1594586290]
+
+[node name="MP_Portal_Sand_Terrain" parent="Static" unique_id=909702276 instance=ExtResource("6_y5a6c")]
+metadata/_edit_lock_ = true
+
+[node name="MP_Portal_Sand_Assets" parent="Static" unique_id=864240534 instance=ExtResource("7_ne77g")]
+metadata/_edit_lock_ = true
+
+[node name="Universal Elevator UPDATED" type="Node3D" parent="." unique_id=305117161]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 16.419125, 53.66439, 18.653221)
+
+[node name="Above Ground" type="Node3D" parent="Universal Elevator UPDATED" unique_id=625760772]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -13.235844, 0)
+
+[node name="Elevator shaft Of Free will" type="Node3D" parent="Universal Elevator UPDATED/Above Ground" unique_id=2091917082]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -110.123436, 26.983727, 16.411001)
+
+[node name="HighwaySignPole_01" parent="Universal Elevator UPDATED/Above Ground/Elevator shaft Of Free will" unique_id=329200072 instance=ExtResource("43_syyuf")]
+transform = Transform3D(-0.47930774, 4.1902414e-08, 0.87764686, -8.742278e-08, -1, 0, 0.87764686, -7.6726316e-08, 0.47930774, 28.396748, -9.289722, 16.465813)
+
+[node name="HighwaySignPole_02" parent="Universal Elevator UPDATED/Above Ground/Elevator shaft Of Free will" unique_id=1352774244 instance=ExtResource("43_syyuf")]
+transform = Transform3D(-0.8779157, 7.674984e-08, -0.47881505, -8.742279e-08, -1, -7.5392454e-15, -0.47881505, 4.185934e-08, 0.8779157, 34.88458, -9.288326, 16.462015)
+
+[node name="HighwaySignPole_03" parent="Universal Elevator UPDATED/Above Ground/Elevator shaft Of Free will" unique_id=616785227 instance=ExtResource("43_syyuf")]
+transform = Transform3D(-0.47930774, 4.1902414e-08, 0.87764686, -8.742278e-08, -1, 0, 0.87764686, -7.6726316e-08, 0.47930774, 30.306854, -9.289722, 16.096666)
+
+[node name="HighwaySignPole_04" parent="Universal Elevator UPDATED/Above Ground/Elevator shaft Of Free will" unique_id=991952767 instance=ExtResource("43_syyuf")]
+transform = Transform3D(-0.8779157, 7.674984e-08, -0.47881505, -8.742279e-08, -1, -7.5392454e-15, -0.47881505, 4.185934e-08, 0.8779157, 32.94375, -9.288326, 16.11473)
+
+[node name="HighwaySignPole_05" parent="Universal Elevator UPDATED/Above Ground/Elevator shaft Of Free will" unique_id=599202342 instance=ExtResource("43_syyuf")]
+transform = Transform3D(-0.47930774, 4.1902414e-08, 0.87764686, -8.742278e-08, -1, 0, 0.87764686, -7.6726316e-08, 0.47930774, 28.396748, -16.084057, 16.465813)
+
+[node name="HighwaySignPole_06" parent="Universal Elevator UPDATED/Above Ground/Elevator shaft Of Free will" unique_id=1208415365 instance=ExtResource("43_syyuf")]
+transform = Transform3D(-0.8779157, 7.674984e-08, -0.47881505, -8.742279e-08, -1, -7.5392454e-15, -0.47881505, 4.185934e-08, 0.8779157, 34.88458, -16.08266, 16.462015)
+
+[node name="HighwaySignPole_07" parent="Universal Elevator UPDATED/Above Ground/Elevator shaft Of Free will" unique_id=505835375 instance=ExtResource("43_syyuf")]
+transform = Transform3D(-0.47930774, 4.1902414e-08, 0.87764686, -8.742278e-08, -1, 0, 0.87764686, -7.6726316e-08, 0.47930774, 30.306854, -16.084057, 16.096666)
+
+[node name="HighwaySignPole_08" parent="Universal Elevator UPDATED/Above Ground/Elevator shaft Of Free will" unique_id=267019166 instance=ExtResource("43_syyuf")]
+transform = Transform3D(-0.8779157, 7.674984e-08, -0.47881505, -8.742279e-08, -1, -7.5392454e-15, -0.47881505, 4.185934e-08, 0.8779157, 32.94375, -16.08266, 16.11473)
+
+[node name="BarrierStoneBlock_01_D12" parent="Universal Elevator UPDATED/Above Ground/Elevator shaft Of Free will" unique_id=282193651 instance=ExtResource("14_dm46y")]
+transform = Transform3D(0.00071467634, -0.29999998, 6.556708e-08, 0, -1.3113417e-08, -1.5, 1.7999998, 0.00011911273, -2.6032912e-11, 35.21886, -11.204998, 19.929386)
+
+[node name="BarrierStoneBlock_01_D13" parent="Universal Elevator UPDATED/Above Ground/Elevator shaft Of Free will" unique_id=1506936225 instance=ExtResource("14_dm46y")]
+transform = Transform3D(0.00071467634, -0.29999998, 6.556708e-08, 0, -1.3113417e-08, -1.5, 1.7999998, 0.00011911273, -2.6032912e-11, 35.21886, -11.204998, 17.622644)
+
+[node name="BarrierStoneBlock_01_D22" parent="Universal Elevator UPDATED/Above Ground/Elevator shaft Of Free will" unique_id=666780658 instance=ExtResource("14_dm46y")]
+transform = Transform3D(-1.2000002, -2.6226836e-08, 5.7320558e-15, -1.3551409e-22, -1.3113418e-08, -1.5, 1.0490734e-07, -0.30000004, 6.556708e-08, 34.088, -11.204998, 21.08446)
+
+[node name="BarrierStoneBlock_01_D23" parent="Universal Elevator UPDATED/Above Ground/Elevator shaft Of Free will" unique_id=1668089661 instance=ExtResource("14_dm46y")]
+transform = Transform3D(-1.2000002, -2.6226836e-08, 5.7320558e-15, -1.3551409e-22, -1.3113418e-08, -1.5, 1.0490734e-07, -0.30000004, 6.556708e-08, 34.088, -11.204998, 20.596844)
+
+[node name="BarrierStoneBlock_01_D25" parent="Universal Elevator UPDATED/Above Ground/Elevator shaft Of Free will" unique_id=1912603093 instance=ExtResource("14_dm46y")]
+transform = Transform3D(-1.2000002, -2.6226836e-08, 5.7320558e-15, -1.3551409e-22, -1.3113418e-08, -1.5, 1.0490734e-07, -0.30000004, 6.556708e-08, 29.15981, -11.204998, 21.084457)
+
+[node name="BarrierStoneBlock_01_D26" parent="Universal Elevator UPDATED/Above Ground/Elevator shaft Of Free will" unique_id=208454188 instance=ExtResource("14_dm46y")]
+transform = Transform3D(-1.2000002, -2.6226836e-08, 5.7320558e-15, -1.3551409e-22, -1.3113418e-08, -1.5, 1.0490734e-07, -0.30000004, 6.556708e-08, 29.15981, -11.204998, 20.596842)
+
+[node name="BarrierStoneBlock_01_D29" parent="Universal Elevator UPDATED/Above Ground/Elevator shaft Of Free will" unique_id=1479857750 instance=ExtResource("14_dm46y")]
+transform = Transform3D(-0.0015370916, 0.2999999, 6.556707e-08, -3.5948917e-11, 1.31134135e-08, -1.5, -1.7999992, -0.00025618193, -2.6032912e-11, 28.044456, -11.204998, 19.940947)
+
+[node name="BarrierStoneBlock_01_D30" parent="Universal Elevator UPDATED/Above Ground/Elevator shaft Of Free will" unique_id=866341961 instance=ExtResource("14_dm46y")]
+transform = Transform3D(-0.0015370916, 0.2999999, 6.556707e-08, -3.5948917e-11, 1.31134135e-08, -1.5, -1.7999992, -0.00025618193, -2.6032912e-11, 28.044456, -11.204998, 17.636192)
+
+[node name="BarrierStoneBlock_01_D18" parent="Universal Elevator UPDATED/Above Ground/Elevator shaft Of Free will" unique_id=1899385493 instance=ExtResource("14_dm46y")]
+transform = Transform3D(1.8, 0, 0, 0, -1.3113417e-08, -1.5, 0, 0.3, -6.556708e-08, 29.197063, -11.204998, 16.123379)
+
+[node name="BarrierStoneBlock_01_D20" parent="Universal Elevator UPDATED/Above Ground/Elevator shaft Of Free will" unique_id=681138725 instance=ExtResource("14_dm46y")]
+transform = Transform3D(1.8, 0, 0, 0, -1.3113417e-08, -1.5, 0, 0.3, -6.556708e-08, 31.611317, -11.204998, 15.886259)
+
+[node name="BarrierStoneBlock_01_D21" parent="Universal Elevator UPDATED/Above Ground/Elevator shaft Of Free will" unique_id=405508338 instance=ExtResource("14_dm46y")]
+transform = Transform3D(1.8, 0, 0, 0, -1.3113417e-08, -1.5, 0, 0.3, -6.556708e-08, 34.0262, -11.204998, 16.12338)
+
+[node name="BarrierStoneBlock_01_D14" parent="Universal Elevator UPDATED/Above Ground/Elevator shaft Of Free will" unique_id=2120122211 instance=ExtResource("14_dm46y")]
+transform = Transform3D(0.00071467634, -0.29999998, 6.556708e-08, 0, -1.3113417e-08, -1.5, 1.7999998, 0.00011911273, -2.6032912e-11, 35.21886, -15.040745, 19.929386)
+
+[node name="BarrierStoneBlock_01_D15" parent="Universal Elevator UPDATED/Above Ground/Elevator shaft Of Free will" unique_id=328392304 instance=ExtResource("14_dm46y")]
+transform = Transform3D(0.00071467634, -0.29999998, 6.556708e-08, 0, -1.3113417e-08, -1.5, 1.7999998, 0.00011911273, -2.6032912e-11, 35.21886, -15.040745, 17.622644)
+
+[node name="BarrierStoneBlock_01_D24" parent="Universal Elevator UPDATED/Above Ground/Elevator shaft Of Free will" unique_id=706607307 instance=ExtResource("14_dm46y")]
+transform = Transform3D(-1.2, -2.6226832e-08, 5.7320558e-15, 0, -1.3113417e-08, -1.5, 1.0490733e-07, -0.3, 6.556708e-08, 34.088, -15.040745, 21.08446)
+
+[node name="BarrierStoneBlock_01_D27" parent="Universal Elevator UPDATED/Above Ground/Elevator shaft Of Free will" unique_id=1239030963 instance=ExtResource("14_dm46y")]
+transform = Transform3D(-1.2, -2.6226832e-08, 5.7320558e-15, 0, -1.3113417e-08, -1.5, 1.0490733e-07, -0.3, 6.556708e-08, 34.088, -15.040745, 20.596844)
+
+[node name="BarrierStoneBlock_01_D28" parent="Universal Elevator UPDATED/Above Ground/Elevator shaft Of Free will" unique_id=591905372 instance=ExtResource("14_dm46y")]
+transform = Transform3D(-1.2, -2.6226832e-08, 5.7320558e-15, 0, -1.3113417e-08, -1.5, 1.0490733e-07, -0.3, 6.556708e-08, 29.15981, -15.040745, 21.084457)
+
+[node name="BarrierStoneBlock_01_D31" parent="Universal Elevator UPDATED/Above Ground/Elevator shaft Of Free will" unique_id=1357500913 instance=ExtResource("14_dm46y")]
+transform = Transform3D(-1.2, -2.6226832e-08, 5.7320558e-15, 0, -1.3113417e-08, -1.5, 1.0490733e-07, -0.3, 6.556708e-08, 29.15981, -15.040745, 20.596842)
+
+[node name="BarrierStoneBlock_01_D32" parent="Universal Elevator UPDATED/Above Ground/Elevator shaft Of Free will" unique_id=278913142 instance=ExtResource("14_dm46y")]
+transform = Transform3D(-0.0015370916, 0.2999999, 6.556707e-08, -3.5948917e-11, 1.31134135e-08, -1.5, -1.7999992, -0.00025618193, -2.6032912e-11, 28.044456, -15.040745, 19.940947)
+
+[node name="BarrierStoneBlock_01_D33" parent="Universal Elevator UPDATED/Above Ground/Elevator shaft Of Free will" unique_id=577847135 instance=ExtResource("14_dm46y")]
+transform = Transform3D(-0.0015370916, 0.2999999, 6.556707e-08, -3.5948917e-11, 1.31134135e-08, -1.5, -1.7999992, -0.00025618193, -2.6032912e-11, 28.044456, -15.040745, 17.636192)
+
+[node name="BarrierStoneBlock_01_D19" parent="Universal Elevator UPDATED/Above Ground/Elevator shaft Of Free will" unique_id=569897215 instance=ExtResource("14_dm46y")]
+transform = Transform3D(1.8, 0, 0, 0, -1.3113417e-08, -1.5, 0, 0.3, -6.556708e-08, 29.197063, -15.040745, 16.123379)
+
+[node name="BarrierStoneBlock_01_D34" parent="Universal Elevator UPDATED/Above Ground/Elevator shaft Of Free will" unique_id=99003836 instance=ExtResource("14_dm46y")]
+transform = Transform3D(1.8, 0, 0, 0, -1.3113417e-08, -1.5, 0, 0.3, -6.556708e-08, 31.611317, -15.040745, 15.886259)
+
+[node name="BarrierStoneBlock_01_D35" parent="Universal Elevator UPDATED/Above Ground/Elevator shaft Of Free will" unique_id=1687801387 instance=ExtResource("14_dm46y")]
+transform = Transform3D(1.8, 0, 0, 0, -1.3113417e-08, -1.5, 0, 0.3, -6.556708e-08, 34.0262, -15.040745, 16.12338)
+
+[node name="BarrierStoneBlock_01_D16" parent="Universal Elevator UPDATED/Above Ground/Elevator shaft Of Free will" unique_id=1037140255 instance=ExtResource("14_dm46y")]
+transform = Transform3D(0.00071467634, -0.29999998, 6.556708e-08, 0, -1.3113417e-08, -1.5, 1.7999998, 0.00011911273, -2.6032912e-11, 35.21886, -18.890198, 19.929386)
+
+[node name="BarrierStoneBlock_01_D17" parent="Universal Elevator UPDATED/Above Ground/Elevator shaft Of Free will" unique_id=438136842 instance=ExtResource("14_dm46y")]
+transform = Transform3D(0.00071467634, -0.29999998, 6.556708e-08, 0, -1.3113417e-08, -1.5, 1.7999998, 0.00011911273, -2.6032912e-11, 35.21886, -18.890198, 17.622644)
+
+[node name="BarrierStoneBlock_01_D36" parent="Universal Elevator UPDATED/Above Ground/Elevator shaft Of Free will" unique_id=4153607 instance=ExtResource("14_dm46y")]
+transform = Transform3D(-1.2, -2.6226832e-08, 5.7320558e-15, 0, -1.3113417e-08, -1.5, 1.0490733e-07, -0.3, 6.556708e-08, 34.088, -18.890198, 21.08446)
+
+[node name="BarrierStoneBlock_01_D37" parent="Universal Elevator UPDATED/Above Ground/Elevator shaft Of Free will" unique_id=430321710 instance=ExtResource("14_dm46y")]
+transform = Transform3D(-1.2, -2.6226832e-08, 5.7320558e-15, 0, -1.3113417e-08, -1.5, 1.0490733e-07, -0.3, 6.556708e-08, 34.088, -18.890198, 20.596844)
+
+[node name="BarrierStoneBlock_01_D38" parent="Universal Elevator UPDATED/Above Ground/Elevator shaft Of Free will" unique_id=1082820803 instance=ExtResource("14_dm46y")]
+transform = Transform3D(-1.2, -2.6226832e-08, 5.7320558e-15, 0, -1.3113417e-08, -1.5, 1.0490733e-07, -0.3, 6.556708e-08, 29.15981, -18.890198, 21.084457)
+
+[node name="BarrierStoneBlock_01_D39" parent="Universal Elevator UPDATED/Above Ground/Elevator shaft Of Free will" unique_id=883714035 instance=ExtResource("14_dm46y")]
+transform = Transform3D(-1.2, -2.6226832e-08, 5.7320558e-15, 0, -1.3113417e-08, -1.5, 1.0490733e-07, -0.3, 6.556708e-08, 29.15981, -18.890198, 20.596842)
+
+[node name="BarrierStoneBlock_01_D40" parent="Universal Elevator UPDATED/Above Ground/Elevator shaft Of Free will" unique_id=1686116301 instance=ExtResource("14_dm46y")]
+transform = Transform3D(-0.0015370916, 0.2999999, 6.556707e-08, -3.5948917e-11, 1.31134135e-08, -1.5, -1.7999992, -0.00025618193, -2.6032912e-11, 28.044456, -18.890198, 19.940947)
+
+[node name="BarrierStoneBlock_01_D41" parent="Universal Elevator UPDATED/Above Ground/Elevator shaft Of Free will" unique_id=1138132367 instance=ExtResource("14_dm46y")]
+transform = Transform3D(-0.0015370916, 0.2999999, 6.556707e-08, -3.5948917e-11, 1.31134135e-08, -1.5, -1.7999992, -0.00025618193, -2.6032912e-11, 28.044456, -18.890198, 17.636192)
+
+[node name="BarrierStoneBlock_01_D42" parent="Universal Elevator UPDATED/Above Ground/Elevator shaft Of Free will" unique_id=1949927505 instance=ExtResource("14_dm46y")]
+transform = Transform3D(1.8, 0, 0, 0, -1.3113417e-08, -1.5, 0, 0.3, -6.556708e-08, 29.197063, -18.890198, 16.123379)
+
+[node name="BarrierStoneBlock_01_D43" parent="Universal Elevator UPDATED/Above Ground/Elevator shaft Of Free will" unique_id=847613696 instance=ExtResource("14_dm46y")]
+transform = Transform3D(1.8, 0, 0, 0, -1.3113417e-08, -1.5, 0, 0.3, -6.556708e-08, 31.611317, -18.890198, 15.886259)
+
+[node name="BarrierStoneBlock_01_D44" parent="Universal Elevator UPDATED/Above Ground/Elevator shaft Of Free will" unique_id=2070920381 instance=ExtResource("14_dm46y")]
+transform = Transform3D(1.8, 0, 0, 0, -1.3113417e-08, -1.5, 0, 0.3, -6.556708e-08, 34.0262, -18.890198, 16.12338)
+
+[node name="FiringRange_Ceiling_02" parent="Universal Elevator UPDATED/Above Ground/Elevator shaft Of Free will" unique_id=561800246 instance=ExtResource("18_x4x36")]
+transform = Transform3D(-0.4, 0, 7.54979e-08, 0, 1, 0, -6.039832e-08, 0, -0.5, 35.22713, -9.274994, 21.07608)
+
+[node name="FiringRange_Ceiling_03" parent="Universal Elevator UPDATED/Above Ground/Elevator shaft Of Free will" unique_id=245254261 instance=ExtResource("18_x4x36")]
+transform = Transform3D(-0.4, 0, 7.54979e-08, 0, 1, 0, -6.039832e-08, 0, -0.5, 35.227135, -8.6213875, 21.07608)
+
+[node name="BarrierStoneBlock_01_D45" parent="Universal Elevator UPDATED/Above Ground/Elevator shaft Of Free will" unique_id=275629467 instance=ExtResource("14_dm46y")]
+transform = Transform3D(3.4357926e-15, 0.00012489675, 1.4999996, 1.8, 1.3113418e-08, -2.7299918e-11, -7.868051e-08, 0.29999995, -0.00062448374, 31.568886, -13.969097, 20.723972)
+
+[node name="BarrierStoneBlock_01_D46" parent="Universal Elevator UPDATED/Above Ground/Elevator shaft Of Free will" unique_id=1685459898 instance=ExtResource("14_dm46y")]
+transform = Transform3D(3.4357926e-15, 0.00012489675, 1.4999996, 1.8, 1.3113418e-08, -2.7299918e-11, -7.868051e-08, 0.29999995, -0.00062448374, 31.568886, -16.2723, 20.723974)
+
+[node name="BarrierStoneBlock_01_D47" parent="Universal Elevator UPDATED/Above Ground/Elevator shaft Of Free will" unique_id=1621239139 instance=ExtResource("14_dm46y")]
+transform = Transform3D(3.4357926e-15, 0.00012489675, 1.4999996, 1.8, 1.3113418e-08, -2.7299918e-11, -7.868051e-08, 0.29999995, -0.00062448374, 31.568886, -18.575932, 20.723976)
+
+[node name="BarrierStoneBlock_01_D48" parent="Universal Elevator UPDATED/Above Ground/Elevator shaft Of Free will" unique_id=1884592068 instance=ExtResource("14_dm46y")]
+transform = Transform3D(3.4357926e-15, 0.00012489675, 1.4999996, 1.8, 1.3113418e-08, -2.7299918e-11, -7.868051e-08, 0.29999995, -0.00062448374, 31.568886, -20.820217, 20.723978)
+
+[node name="Context Floor (Delete this before exporting_ its to level the door with your map)" parent="Universal Elevator UPDATED/Above Ground/Elevator shaft Of Free will" unique_id=1338791690 instance=ExtResource("8_y7eu4")]
+transform = Transform3D(-1, 0, 1.509958e-07, 0, 1, 0, -1.509958e-07, 0, -1, 41.68039, -12.807201, 41.19877)
+
+[node name="FiringRange_Railing_04" parent="Universal Elevator UPDATED/Above Ground/Elevator shaft Of Free will" unique_id=1022156127 instance=ExtResource("12_umtpw")]
+transform = Transform3D(1.3735735e-10, 0.0031423254, 5, 4.9999995, -2.1855695e-07, -2.1630797e-15, 2.1855698e-07, 5, -0.0031423254, 31.641235, -27.301727, 16.481575)
+
+[node name="FiringRange_Railing_05" parent="Universal Elevator UPDATED/Above Ground/Elevator shaft Of Free will" unique_id=657247309 instance=ExtResource("12_umtpw")]
+transform = Transform3D(2.185569e-07, 4.9999986, -0.0031426551, 4.9999995, -2.1855695e-07, 3.467948e-17, -1.3736637e-10, -0.0031426551, -4.9999986, 28.470444, -27.301483, 18.940273)
+
+[node name="FiringRange_Railing_06" parent="Universal Elevator UPDATED/Above Ground/Elevator shaft Of Free will" unique_id=2094286182 instance=ExtResource("12_umtpw")]
+transform = Transform3D(-2.1855693e-07, -4.9999986, 0.0031421764, 4.9999995, -2.1855693e-07, -4.2689504e-17, 1.3735033e-10, 0.0031421764, 4.9999986, 34.818115, -27.301483, 18.894243)
+
+[node name="AntennaMastMetal_04" parent="Universal Elevator UPDATED/Above Ground/Elevator shaft Of Free will" unique_id=1220290179 instance=ExtResource("13_mv1df")]
+transform = Transform3D(-1, 5.4955204e-11, 0.00062853214, -7.0527875e-16, -1, 8.742278e-08, 0.00062853214, 8.742276e-08, 1, 29.490692, -8.94873, 16.788902)
+
+[node name="AntennaMastMetal_05" parent="Universal Elevator UPDATED/Above Ground/Elevator shaft Of Free will" unique_id=1056596909 instance=ExtResource("13_mv1df")]
+transform = Transform3D(-1, 5.4955204e-11, 0.00062853214, -7.0527875e-16, -1, 8.742278e-08, 0.00062853214, 8.742276e-08, 1, 33.804718, -8.94873, 16.78619)
+
+[node name="Elevator Floor Of Free Will" type="Node3D" parent="Universal Elevator UPDATED/Above Ground" unique_id=2040879855]
+transform = Transform3D(-1, 0, 1.509958e-07, 0, 1, 0, -1.509958e-07, 0, -1, -73.42255, 1.0124893, 64.7453)
+
+[node name="Elevator Doors2" type="Node3D" parent="Universal Elevator UPDATED/Above Ground/Elevator Floor Of Free Will" unique_id=1649566713]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 0.010551453, -0.9854126, -0.99638367)
+
+[node name="Right Door" parent="Universal Elevator UPDATED/Above Ground/Elevator Floor Of Free Will/Elevator Doors2" unique_id=1443267365 instance=ExtResource("9_in6og")]
+transform = Transform3D(0.00039708416, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, 0.00039708416, -2.9753804, 13.723766, -28.729052)
+ObjId = 9101
+
+[node name="Left Door" parent="Universal Elevator UPDATED/Above Ground/Elevator Floor Of Free Will/Elevator Doors2" unique_id=1908935818 instance=ExtResource("9_in6og")]
+transform = Transform3D(-0.00039693515, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -0.00039693515, -7.1597896, 13.723766, -28.59446)
+ObjId = 9102
+
+[node name="FiringRange_Floor_A2" parent="Universal Elevator UPDATED/Above Ground/Elevator Floor Of Free Will" unique_id=413815204 instance=ExtResource("15_xwedc")]
+transform = Transform3D(-0.0002184771, 0, 0.79999995, 0, 0.99999994, 0, -0.54999995, 0, -0.0003177896, 6.3932114, 13.1995125, 30.476124)
+ObjId = 9103
+
+[node name="FiringRange_Mat_01" parent="Universal Elevator UPDATED/Above Ground/Elevator Floor Of Free Will" unique_id=1204769374 instance=ExtResource("16_2xroj")]
+transform = Transform3D(0.00039708614, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, 0.00039708614, 5.8579407, 13.199562, 27.772243)
+
+[node name="FiringRange_FiringBarrier_03" parent="Universal Elevator UPDATED/Above Ground/Elevator Floor Of Free Will" unique_id=837986257 instance=ExtResource("17_tlk50")]
+transform = Transform3D(0.99999994, -3.471845e-11, -0.00039713085, 0, -1, 8.742278e-08, -0.00039713085, -8.742277e-08, -0.99999994, 3.6643066, 13.756741, 30.281189)
+
+[node name="FiringRange_FiringBarrier_04" parent="Universal Elevator UPDATED/Above Ground/Elevator Floor Of Free Will" unique_id=1664027001 instance=ExtResource("17_tlk50")]
+transform = Transform3D(0.99999994, 0, 0.00039713085, 0, 1, 0, -0.00039713085, 0, 0.99999994, 3.6643677, 13.986778, 30.429396)
+
+[node name="FiringRange_FiringBarrier_08" parent="Universal Elevator UPDATED/Above Ground/Elevator Floor Of Free Will" unique_id=537804662 instance=ExtResource("17_tlk50")]
+transform = Transform3D(-0.00076787546, 0, 0.9999996, 0, 1, 0, -0.9299997, 0, -0.0008256808, 6.3699074, 13.986141, 30.4508)
+
+[node name="FiringRange_FiringBarrier_10" parent="Universal Elevator UPDATED/Above Ground/Elevator Floor Of Free Will" unique_id=1864208807 instance=ExtResource("17_tlk50")]
+transform = Transform3D(-0.00076787546, 0, 0.9999996, 0, 1, 0, -0.9299997, 0, -0.0008256808, 6.3699074, 13.986141, 30.4508)
+
+[node name="FiringRange_FiringBarrier_09" parent="Universal Elevator UPDATED/Above Ground/Elevator Floor Of Free Will" unique_id=1716167886 instance=ExtResource("17_tlk50")]
+transform = Transform3D(0.00036919862, -3.4698022e-11, 0.99999976, -8.130318e-08, -1, 4.74348e-16, 0.93, -8.742278e-08, -0.00039699674, 6.3688354, 13.767643, 27.744173)
+
+[node name="FiringRange_FiringBarrier_11" parent="Universal Elevator UPDATED/Above Ground/Elevator Floor Of Free Will" unique_id=475207074 instance=ExtResource("17_tlk50")]
+transform = Transform3D(-0.00076787546, 0, 0.9999996, 0, 1, 0, -0.9299997, 0, -0.0008256808, 3.6705513, 13.986141, 30.45187)
+
+[node name="FiringRange_FiringBarrier_12" parent="Universal Elevator UPDATED/Above Ground/Elevator Floor Of Free Will" unique_id=783592026 instance=ExtResource("17_tlk50")]
+transform = Transform3D(0.00036919862, -3.4698022e-11, 0.99999976, -8.130318e-08, -1, 4.74348e-16, 0.93, -8.742278e-08, -0.00039699674, 3.6694756, 13.767643, 27.745247)
+
+[node name="FiringRange_MannequinRotation_01" parent="Universal Elevator UPDATED/Above Ground/Elevator Floor Of Free Will" unique_id=1001439664 instance=ExtResource("10_k5nq8")]
+transform = Transform3D(0.99999994, 0, 0.00039713085, 0, 1, 0, -0.00039713085, 0, 0.99999994, 6.767235, 13.290276, 27.737213)
+
+[node name="FiringRange_MannequinRotation_02" parent="Universal Elevator UPDATED/Above Ground/Elevator Floor Of Free Will" unique_id=875558130 instance=ExtResource("10_k5nq8")]
+transform = Transform3D(0.99999994, 0, 0.00039713085, 0, 1, 0, -0.00039713085, 0, 0.99999994, 6.768242, 13.290276, 30.271809)
+
+[node name="FiringRange_MannequinRotation_03" parent="Universal Elevator UPDATED/Above Ground/Elevator Floor Of Free Will" unique_id=760773763 instance=ExtResource("10_k5nq8")]
+transform = Transform3D(0.99999994, 0, 0.00039713085, 0, 1, 0, -0.00039713085, 0, 0.99999994, 4.067169, 13.290276, 30.272884)
+
+[node name="FiringRange_MannequinRotation_04" parent="Universal Elevator UPDATED/Above Ground/Elevator Floor Of Free Will" unique_id=337398983 instance=ExtResource("10_k5nq8")]
+transform = Transform3D(0.99999994, 0, 0.00039713085, 0, 1, 0, -0.00039713085, 0, 0.99999994, 4.0661583, 13.290276, 27.731123)
+
+[node name="FiringRange_MannequinRotation_05" parent="Universal Elevator UPDATED/Above Ground/Elevator Floor Of Free Will" unique_id=995221465 instance=ExtResource("11_lyhaa")]
+transform = Transform3D(-0.99999994, 0, -0.00039704144, 0, 1, 0, 0.00039704144, 0, -0.99999994, 3.853897, 13.1995125, 27.926994)
+
+[node name="BarrierStoneBlock_01_D48" parent="Universal Elevator UPDATED/Above Ground/Elevator Floor Of Free Will" unique_id=1560541862 instance=ExtResource("14_dm46y")]
+transform = Transform3D(3.4392335e-15, 1.3113417e-08, -1.4999996, 1.7999998, -1.3113417e-08, 0, -7.868049e-08, -0.3, -6.5567065e-08, 5.131859, 11.562218, 27.878567)
+
+[node name="Below Ground" type="Node3D" parent="Universal Elevator UPDATED" unique_id=789097010]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -28.447752, 0)
+
+[node name="Elevator shaft Of Free will" type="Node3D" parent="Universal Elevator UPDATED/Below Ground" unique_id=693560055]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -110.123436, 26.983727, 16.411001)
+
+[node name="HighwaySignPole_01" parent="Universal Elevator UPDATED/Below Ground/Elevator shaft Of Free will" unique_id=277626917 instance=ExtResource("43_syyuf")]
+transform = Transform3D(-0.47930774, 4.1902414e-08, 0.87764686, -8.742278e-08, -1, 0, 0.87764686, -7.6726316e-08, 0.47930774, 28.396748, -9.289722, 16.465813)
+
+[node name="HighwaySignPole_02" parent="Universal Elevator UPDATED/Below Ground/Elevator shaft Of Free will" unique_id=1397150082 instance=ExtResource("43_syyuf")]
+transform = Transform3D(-0.8779157, 7.674984e-08, -0.47881505, -8.742279e-08, -1, -7.5392454e-15, -0.47881505, 4.185934e-08, 0.8779157, 34.88458, -9.288326, 16.462015)
+
+[node name="HighwaySignPole_03" parent="Universal Elevator UPDATED/Below Ground/Elevator shaft Of Free will" unique_id=1125629040 instance=ExtResource("43_syyuf")]
+transform = Transform3D(-0.47930774, 4.1902414e-08, 0.87764686, -8.742278e-08, -1, 0, 0.87764686, -7.6726316e-08, 0.47930774, 30.306854, -9.289722, 16.096666)
+
+[node name="HighwaySignPole_04" parent="Universal Elevator UPDATED/Below Ground/Elevator shaft Of Free will" unique_id=1021768320 instance=ExtResource("43_syyuf")]
+transform = Transform3D(-0.8779157, 7.674984e-08, -0.47881505, -8.742279e-08, -1, -7.5392454e-15, -0.47881505, 4.185934e-08, 0.8779157, 32.94375, -9.288326, 16.11473)
+
+[node name="HighwaySignPole_09" parent="Universal Elevator UPDATED/Below Ground/Elevator shaft Of Free will" unique_id=1674883085 instance=ExtResource("43_syyuf")]
+transform = Transform3D(-0.47930774, 4.1902414e-08, 0.87764686, -8.742278e-08, -1, 0, 0.87764686, -7.6726316e-08, 0.47930774, 28.396751, -16.193295, 16.465813)
+
+[node name="HighwaySignPole_10" parent="Universal Elevator UPDATED/Below Ground/Elevator shaft Of Free will" unique_id=1789746984 instance=ExtResource("43_syyuf")]
+transform = Transform3D(-0.8779157, 7.674984e-08, -0.47881505, -8.742279e-08, -1, -7.5392454e-15, -0.47881505, 4.185934e-08, 0.8779157, 34.884583, -16.191898, 16.462013)
+
+[node name="HighwaySignPole_11" parent="Universal Elevator UPDATED/Below Ground/Elevator shaft Of Free will" unique_id=1802352846 instance=ExtResource("43_syyuf")]
+transform = Transform3D(-0.47930774, 4.1902414e-08, 0.87764686, -8.742278e-08, -1, 0, 0.87764686, -7.6726316e-08, 0.47930774, 30.306854, -16.193295, 16.096668)
+
+[node name="HighwaySignPole_12" parent="Universal Elevator UPDATED/Below Ground/Elevator shaft Of Free will" unique_id=432125007 instance=ExtResource("43_syyuf")]
+transform = Transform3D(-0.8779157, 7.674984e-08, -0.47881505, -8.742279e-08, -1, -7.5392454e-15, -0.47881505, 4.185934e-08, 0.8779157, 32.943756, -16.191898, 16.11473)
+
+[node name="HighwaySignPole_05" parent="Universal Elevator UPDATED/Below Ground/Elevator shaft Of Free will" unique_id=802003390 instance=ExtResource("43_syyuf")]
+transform = Transform3D(-0.47930774, 4.1902414e-08, 0.87764686, -8.742278e-08, -1, 0, 0.87764686, -7.6726316e-08, 0.47930774, 28.396751, -5.4565697, 16.465813)
+
+[node name="HighwaySignPole_06" parent="Universal Elevator UPDATED/Below Ground/Elevator shaft Of Free will" unique_id=2076507361 instance=ExtResource("43_syyuf")]
+transform = Transform3D(-0.8779157, 7.674984e-08, -0.47881505, -8.742279e-08, -1, -7.5392454e-15, -0.47881505, 4.185934e-08, 0.8779157, 34.884583, -5.4551735, 16.462013)
+
+[node name="HighwaySignPole_07" parent="Universal Elevator UPDATED/Below Ground/Elevator shaft Of Free will" unique_id=969524871 instance=ExtResource("43_syyuf")]
+transform = Transform3D(-0.47930774, 4.1902414e-08, 0.87764686, -8.742278e-08, -1, 0, 0.87764686, -7.6726316e-08, 0.47930774, 30.306854, -5.4565697, 16.096668)
+
+[node name="HighwaySignPole_08" parent="Universal Elevator UPDATED/Below Ground/Elevator shaft Of Free will" unique_id=447678164 instance=ExtResource("43_syyuf")]
+transform = Transform3D(-0.8779157, 7.674984e-08, -0.47881505, -8.742279e-08, -1, -7.5392454e-15, -0.47881505, 4.185934e-08, 0.8779157, 32.943756, -5.4551735, 16.11473)
+
+[node name="BarrierStoneBlock_01_D12" parent="Universal Elevator UPDATED/Below Ground/Elevator shaft Of Free will" unique_id=1016551016 instance=ExtResource("14_dm46y")]
+transform = Transform3D(0.00071467634, -0.29999998, 6.556708e-08, 0, -1.3113417e-08, -1.5, 1.7999998, 0.00011911273, -2.6032912e-11, 35.21886, -11.204998, 19.929386)
+
+[node name="BarrierStoneBlock_01_D13" parent="Universal Elevator UPDATED/Below Ground/Elevator shaft Of Free will" unique_id=1733865738 instance=ExtResource("14_dm46y")]
+transform = Transform3D(0.00071467634, -0.29999998, 6.556708e-08, 0, -1.3113417e-08, -1.5, 1.7999998, 0.00011911273, -2.6032912e-11, 35.21886, -11.204998, 17.622644)
+
+[node name="BarrierStoneBlock_01_D29" parent="Universal Elevator UPDATED/Below Ground/Elevator shaft Of Free will" unique_id=1882660909 instance=ExtResource("14_dm46y")]
+transform = Transform3D(-0.0015370916, 0.2999999, 6.556707e-08, -3.5948917e-11, 1.31134135e-08, -1.5, -1.7999992, -0.00025618193, -2.6032912e-11, 28.044456, -11.204998, 19.940947)
+
+[node name="BarrierStoneBlock_01_D30" parent="Universal Elevator UPDATED/Below Ground/Elevator shaft Of Free will" unique_id=1906227733 instance=ExtResource("14_dm46y")]
+transform = Transform3D(-0.0015370916, 0.2999999, 6.556707e-08, -3.5948917e-11, 1.31134135e-08, -1.5, -1.7999992, -0.00025618193, -2.6032912e-11, 28.044456, -11.204998, 17.636192)
+
+[node name="BarrierStoneBlock_01_D18" parent="Universal Elevator UPDATED/Below Ground/Elevator shaft Of Free will" unique_id=977468558 instance=ExtResource("14_dm46y")]
+transform = Transform3D(1.8, 0, 0, 0, -1.3113417e-08, -1.5, 0, 0.3, -6.556708e-08, 29.197063, -11.204998, 16.123379)
+
+[node name="BarrierStoneBlock_01_D20" parent="Universal Elevator UPDATED/Below Ground/Elevator shaft Of Free will" unique_id=1784403786 instance=ExtResource("14_dm46y")]
+transform = Transform3D(1.8, 0, 0, 0, -1.3113417e-08, -1.5, 0, 0.3, -6.556708e-08, 31.611317, -11.204998, 15.886259)
+
+[node name="BarrierStoneBlock_01_D21" parent="Universal Elevator UPDATED/Below Ground/Elevator shaft Of Free will" unique_id=1987443927 instance=ExtResource("14_dm46y")]
+transform = Transform3D(1.8, 0, 0, 0, -1.3113417e-08, -1.5, 0, 0.3, -6.556708e-08, 34.0262, -11.204998, 16.12338)
+
+[node name="BarrierStoneBlock_01_D14" parent="Universal Elevator UPDATED/Below Ground/Elevator shaft Of Free will" unique_id=1721336712 instance=ExtResource("14_dm46y")]
+transform = Transform3D(0.00071467634, -0.29999998, 6.556708e-08, 0, -1.3113417e-08, -1.5, 1.7999998, 0.00011911273, -2.6032912e-11, 35.21886, -15.040745, 19.929386)
+
+[node name="BarrierStoneBlock_01_D15" parent="Universal Elevator UPDATED/Below Ground/Elevator shaft Of Free will" unique_id=790220764 instance=ExtResource("14_dm46y")]
+transform = Transform3D(0.00071467634, -0.29999998, 6.556708e-08, 0, -1.3113417e-08, -1.5, 1.7999998, 0.00011911273, -2.6032912e-11, 35.21886, -15.040745, 17.622644)
+
+[node name="BarrierStoneBlock_01_D24" parent="Universal Elevator UPDATED/Below Ground/Elevator shaft Of Free will" unique_id=1055110302 instance=ExtResource("14_dm46y")]
+transform = Transform3D(-1.2, -2.6226832e-08, 5.7320558e-15, 0, -1.3113417e-08, -1.5, 1.0490733e-07, -0.3, 6.556708e-08, 34.088, -15.040745, 21.08446)
+
+[node name="BarrierStoneBlock_01_D27" parent="Universal Elevator UPDATED/Below Ground/Elevator shaft Of Free will" unique_id=768375768 instance=ExtResource("14_dm46y")]
+transform = Transform3D(-1.2, -2.6226832e-08, 5.7320558e-15, 0, -1.3113417e-08, -1.5, 1.0490733e-07, -0.3, 6.556708e-08, 34.088, -15.040745, 20.596844)
+
+[node name="BarrierStoneBlock_01_D28" parent="Universal Elevator UPDATED/Below Ground/Elevator shaft Of Free will" unique_id=1621805722 instance=ExtResource("14_dm46y")]
+transform = Transform3D(-1.2, -2.6226832e-08, 5.7320558e-15, 0, -1.3113417e-08, -1.5, 1.0490733e-07, -0.3, 6.556708e-08, 29.15981, -15.040745, 21.084457)
+
+[node name="BarrierStoneBlock_01_D31" parent="Universal Elevator UPDATED/Below Ground/Elevator shaft Of Free will" unique_id=1765429217 instance=ExtResource("14_dm46y")]
+transform = Transform3D(-1.2, -2.6226832e-08, 5.7320558e-15, 0, -1.3113417e-08, -1.5, 1.0490733e-07, -0.3, 6.556708e-08, 29.15981, -15.040745, 20.596842)
+
+[node name="BarrierStoneBlock_01_D25" parent="Universal Elevator UPDATED/Below Ground/Elevator shaft Of Free will" unique_id=317008176 instance=ExtResource("14_dm46y")]
+transform = Transform3D(-1.2, -2.6226832e-08, 5.7320558e-15, 0, -1.3113417e-08, -1.5, 1.0490733e-07, -0.3, 6.556708e-08, 34.088013, -11.231689, 21.08446)
+
+[node name="BarrierStoneBlock_01_D57" parent="Universal Elevator UPDATED/Below Ground/Elevator shaft Of Free will" unique_id=1289705613 instance=ExtResource("14_dm46y")]
+transform = Transform3D(-1.2, -2.6226832e-08, 5.7320558e-15, 0, -1.3113417e-08, -1.5, 1.0490733e-07, -0.3, 6.556708e-08, 34.088013, -11.231689, 20.596844)
+
+[node name="BarrierStoneBlock_01_D58" parent="Universal Elevator UPDATED/Below Ground/Elevator shaft Of Free will" unique_id=1516883170 instance=ExtResource("14_dm46y")]
+transform = Transform3D(-1.2, -2.6226832e-08, 5.7320558e-15, 0, -1.3113417e-08, -1.5, 1.0490733e-07, -0.3, 6.556708e-08, 29.15982, -11.231689, 21.084457)
+
+[node name="BarrierStoneBlock_01_D59" parent="Universal Elevator UPDATED/Below Ground/Elevator shaft Of Free will" unique_id=778495256 instance=ExtResource("14_dm46y")]
+transform = Transform3D(-1.2, -2.6226832e-08, 5.7320558e-15, 0, -1.3113417e-08, -1.5, 1.0490733e-07, -0.3, 6.556708e-08, 29.15982, -11.231689, 20.596842)
+
+[node name="BarrierStoneBlock_01_D26" parent="Universal Elevator UPDATED/Below Ground/Elevator shaft Of Free will" unique_id=272329007 instance=ExtResource("14_dm46y")]
+transform = Transform3D(-1.2, -2.6226832e-08, 5.7320558e-15, 0, -1.3113417e-08, -1.5, 1.0490733e-07, -0.3, 6.556708e-08, 34.088013, -7.4403744, 21.08446)
+
+[node name="BarrierStoneBlock_01_D60" parent="Universal Elevator UPDATED/Below Ground/Elevator shaft Of Free will" unique_id=503327906 instance=ExtResource("14_dm46y")]
+transform = Transform3D(-1.2, -2.6226832e-08, 5.7320558e-15, 0, -1.3113417e-08, -1.5, 1.0490733e-07, -0.3, 6.556708e-08, 34.088013, -7.4403744, 20.596844)
+
+[node name="BarrierStoneBlock_01_D61" parent="Universal Elevator UPDATED/Below Ground/Elevator shaft Of Free will" unique_id=228690246 instance=ExtResource("14_dm46y")]
+transform = Transform3D(-1.2, -2.6226832e-08, 5.7320558e-15, 0, -1.3113417e-08, -1.5, 1.0490733e-07, -0.3, 6.556708e-08, 29.15982, -7.4403744, 21.084457)
+
+[node name="BarrierStoneBlock_01_D62" parent="Universal Elevator UPDATED/Below Ground/Elevator shaft Of Free will" unique_id=1282376528 instance=ExtResource("14_dm46y")]
+transform = Transform3D(-1.2, -2.6226832e-08, 5.7320558e-15, 0, -1.3113417e-08, -1.5, 1.0490733e-07, -0.3, 6.556708e-08, 29.15982, -7.4403744, 20.596842)
+
+[node name="BarrierStoneBlock_01_D32" parent="Universal Elevator UPDATED/Below Ground/Elevator shaft Of Free will" unique_id=562321807 instance=ExtResource("14_dm46y")]
+transform = Transform3D(-0.0015370916, 0.2999999, 6.556707e-08, -3.5948917e-11, 1.31134135e-08, -1.5, -1.7999992, -0.00025618193, -2.6032912e-11, 28.044456, -15.040745, 19.940947)
+
+[node name="BarrierStoneBlock_01_D33" parent="Universal Elevator UPDATED/Below Ground/Elevator shaft Of Free will" unique_id=611084378 instance=ExtResource("14_dm46y")]
+transform = Transform3D(-0.0015370916, 0.2999999, 6.556707e-08, -3.5948917e-11, 1.31134135e-08, -1.5, -1.7999992, -0.00025618193, -2.6032912e-11, 28.044456, -15.040745, 17.636192)
+
+[node name="BarrierStoneBlock_01_D19" parent="Universal Elevator UPDATED/Below Ground/Elevator shaft Of Free will" unique_id=383071493 instance=ExtResource("14_dm46y")]
+transform = Transform3D(1.8, 0, 0, 0, -1.3113417e-08, -1.5, 0, 0.3, -6.556708e-08, 29.197063, -15.040745, 16.123379)
+
+[node name="BarrierStoneBlock_01_D34" parent="Universal Elevator UPDATED/Below Ground/Elevator shaft Of Free will" unique_id=13027969 instance=ExtResource("14_dm46y")]
+transform = Transform3D(1.8, 0, 0, 0, -1.3113417e-08, -1.5, 0, 0.3, -6.556708e-08, 31.611317, -15.040745, 15.886259)
+
+[node name="BarrierStoneBlock_01_D35" parent="Universal Elevator UPDATED/Below Ground/Elevator shaft Of Free will" unique_id=1664203431 instance=ExtResource("14_dm46y")]
+transform = Transform3D(1.8, 0, 0, 0, -1.3113417e-08, -1.5, 0, 0.3, -6.556708e-08, 34.0262, -15.040745, 16.12338)
+
+[node name="BarrierStoneBlock_01_D16" parent="Universal Elevator UPDATED/Below Ground/Elevator shaft Of Free will" unique_id=826204558 instance=ExtResource("14_dm46y")]
+transform = Transform3D(0.00071467634, -0.29999998, 6.556708e-08, 0, -1.3113417e-08, -1.5, 1.7999998, 0.00011911273, -2.6032912e-11, 35.21886, -18.890198, 19.929386)
+
+[node name="BarrierStoneBlock_01_D17" parent="Universal Elevator UPDATED/Below Ground/Elevator shaft Of Free will" unique_id=1252998343 instance=ExtResource("14_dm46y")]
+transform = Transform3D(0.00071467634, -0.29999998, 6.556708e-08, 0, -1.3113417e-08, -1.5, 1.7999998, 0.00011911273, -2.6032912e-11, 35.21886, -18.890198, 17.622644)
+
+[node name="BarrierStoneBlock_01_D36" parent="Universal Elevator UPDATED/Below Ground/Elevator shaft Of Free will" unique_id=959683509 instance=ExtResource("14_dm46y")]
+transform = Transform3D(-1.2, -2.6226832e-08, 5.7320558e-15, 0, -1.3113417e-08, -1.5, 1.0490733e-07, -0.3, 6.556708e-08, 34.088, -18.890198, 21.08446)
+
+[node name="BarrierStoneBlock_01_D37" parent="Universal Elevator UPDATED/Below Ground/Elevator shaft Of Free will" unique_id=162700198 instance=ExtResource("14_dm46y")]
+transform = Transform3D(-1.2, -2.6226832e-08, 5.7320558e-15, 0, -1.3113417e-08, -1.5, 1.0490733e-07, -0.3, 6.556708e-08, 34.088, -18.890198, 20.596844)
+
+[node name="BarrierStoneBlock_01_D38" parent="Universal Elevator UPDATED/Below Ground/Elevator shaft Of Free will" unique_id=1259328288 instance=ExtResource("14_dm46y")]
+transform = Transform3D(-1.2, -2.6226832e-08, 5.7320558e-15, 0, -1.3113417e-08, -1.5, 1.0490733e-07, -0.3, 6.556708e-08, 29.15981, -18.890198, 21.084457)
+
+[node name="BarrierStoneBlock_01_D39" parent="Universal Elevator UPDATED/Below Ground/Elevator shaft Of Free will" unique_id=1384211655 instance=ExtResource("14_dm46y")]
+transform = Transform3D(-1.2, -2.6226832e-08, 5.7320558e-15, 0, -1.3113417e-08, -1.5, 1.0490733e-07, -0.3, 6.556708e-08, 29.15981, -18.890198, 20.596842)
+
+[node name="BarrierStoneBlock_01_D40" parent="Universal Elevator UPDATED/Below Ground/Elevator shaft Of Free will" unique_id=1057818597 instance=ExtResource("14_dm46y")]
+transform = Transform3D(-0.0015370916, 0.2999999, 6.556707e-08, -3.5948917e-11, 1.31134135e-08, -1.5, -1.7999992, -0.00025618193, -2.6032912e-11, 28.044456, -18.890198, 19.940947)
+
+[node name="BarrierStoneBlock_01_D41" parent="Universal Elevator UPDATED/Below Ground/Elevator shaft Of Free will" unique_id=1052919323 instance=ExtResource("14_dm46y")]
+transform = Transform3D(-0.0015370916, 0.2999999, 6.556707e-08, -3.5948917e-11, 1.31134135e-08, -1.5, -1.7999992, -0.00025618193, -2.6032912e-11, 28.044456, -18.890198, 17.636192)
+
+[node name="BarrierStoneBlock_01_D42" parent="Universal Elevator UPDATED/Below Ground/Elevator shaft Of Free will" unique_id=806051561 instance=ExtResource("14_dm46y")]
+transform = Transform3D(1.8, 0, 0, 0, -1.3113417e-08, -1.5, 0, 0.3, -6.556708e-08, 29.197063, -18.890198, 16.123379)
+
+[node name="BarrierStoneBlock_01_D43" parent="Universal Elevator UPDATED/Below Ground/Elevator shaft Of Free will" unique_id=564695564 instance=ExtResource("14_dm46y")]
+transform = Transform3D(1.8, 0, 0, 0, -1.3113417e-08, -1.5, 0, 0.3, -6.556708e-08, 31.611317, -18.890198, 15.886259)
+
+[node name="BarrierStoneBlock_01_D44" parent="Universal Elevator UPDATED/Below Ground/Elevator shaft Of Free will" unique_id=747293822 instance=ExtResource("14_dm46y")]
+transform = Transform3D(1.8, 0, 0, 0, -1.3113417e-08, -1.5, 0, 0.3, -6.556708e-08, 34.0262, -18.890198, 16.12338)
+
+[node name="BarrierStoneBlock_01_D45" parent="Universal Elevator UPDATED/Below Ground/Elevator shaft Of Free will" unique_id=1427739165 instance=ExtResource("14_dm46y")]
+transform = Transform3D(3.4357926e-15, 0.00012489675, 1.4999996, 1.8, 1.3113418e-08, -2.7299918e-11, -7.868051e-08, 0.29999995, -0.00062448374, 31.568893, -8.854769, 20.723972)
+
+[node name="BarrierStoneBlock_01_D49" parent="Universal Elevator UPDATED/Below Ground/Elevator shaft Of Free will" unique_id=1124504571 instance=ExtResource("14_dm46y")]
+transform = Transform3D(0.00071467634, -0.29999998, 6.556708e-08, 0, -1.3113417e-08, -1.5, 1.7999998, 0.00011911273, -2.6032912e-11, 35.218872, -7.368738, 19.929386)
+
+[node name="BarrierStoneBlock_01_D50" parent="Universal Elevator UPDATED/Below Ground/Elevator shaft Of Free will" unique_id=222456089 instance=ExtResource("14_dm46y")]
+transform = Transform3D(0.00071467634, -0.29999998, 6.556708e-08, 0, -1.3113417e-08, -1.5, 1.7999998, 0.00011911273, -2.6032912e-11, 35.218872, -7.368738, 17.622644)
+
+[node name="BarrierStoneBlock_01_D51" parent="Universal Elevator UPDATED/Below Ground/Elevator shaft Of Free will" unique_id=1649811800 instance=ExtResource("14_dm46y")]
+transform = Transform3D(-0.0015370916, 0.2999999, 6.556707e-08, -3.5948917e-11, 1.31134135e-08, -1.5, -1.7999992, -0.00025618193, -2.6032912e-11, 28.044464, -7.368738, 19.940947)
+
+[node name="BarrierStoneBlock_01_D52" parent="Universal Elevator UPDATED/Below Ground/Elevator shaft Of Free will" unique_id=2078677612 instance=ExtResource("14_dm46y")]
+transform = Transform3D(-0.0015370916, 0.2999999, 6.556707e-08, -3.5948917e-11, 1.31134135e-08, -1.5, -1.7999992, -0.00025618193, -2.6032912e-11, 28.044456, -7.368738, 17.636192)
+
+[node name="BarrierStoneBlock_01_D53" parent="Universal Elevator UPDATED/Below Ground/Elevator shaft Of Free will" unique_id=392829966 instance=ExtResource("14_dm46y")]
+transform = Transform3D(1.8, 0, 0, 0, -1.3113417e-08, -1.5, 0, 0.3, -6.556708e-08, 29.197067, -7.368738, 16.123379)
+
+[node name="BarrierStoneBlock_01_D54" parent="Universal Elevator UPDATED/Below Ground/Elevator shaft Of Free will" unique_id=1156371893 instance=ExtResource("14_dm46y")]
+transform = Transform3D(1.8, 0, 0, 0, -1.3113417e-08, -1.5, 0, 0.3, -6.556708e-08, 31.61132, -7.368738, 15.886259)
+
+[node name="BarrierStoneBlock_01_D55" parent="Universal Elevator UPDATED/Below Ground/Elevator shaft Of Free will" unique_id=1531208093 instance=ExtResource("14_dm46y")]
+transform = Transform3D(1.8, 0, 0, 0, -1.3113417e-08, -1.5, 0, 0.3, -6.556708e-08, 34.0262, -7.368738, 16.123379)
+
+[node name="BarrierStoneBlock_01_D56" parent="Universal Elevator UPDATED/Below Ground/Elevator shaft Of Free will" unique_id=311596090 instance=ExtResource("14_dm46y")]
+transform = Transform3D(3.4357926e-15, 0.00012489675, 1.4999996, 1.8, 1.3113418e-08, -2.7299918e-11, -7.868051e-08, 0.29999995, -0.00062448374, 31.568893, -6.556036, 20.723972)
+
+[node name="BarrierStoneBlock_01_D46" parent="Universal Elevator UPDATED/Below Ground/Elevator shaft Of Free will" unique_id=1461444437 instance=ExtResource("14_dm46y")]
+transform = Transform3D(3.4357926e-15, 0.00012489675, 1.4999996, 1.8, 1.3113418e-08, -2.7299918e-11, -7.868051e-08, 0.29999995, -0.00062448374, 31.568893, -11.13319, 20.723974)
+
+[node name="BarrierStoneBlock_01_D47" parent="Universal Elevator UPDATED/Below Ground/Elevator shaft Of Free will" unique_id=1430810957 instance=ExtResource("14_dm46y")]
+transform = Transform3D(3.4357926e-15, 0.00012489675, 1.4999996, 1.8, 1.3113418e-08, -2.7299918e-11, -7.868051e-08, 0.29999995, -0.00062448374, 31.568893, -13.432184, 20.723976)
+
+[node name="BarrierStoneBlock_01_D48" parent="Universal Elevator UPDATED/Below Ground/Elevator shaft Of Free will" unique_id=22441317 instance=ExtResource("14_dm46y")]
+transform = Transform3D(3.4357926e-15, 0.00012489675, 1.4999996, 1.8, 1.3113418e-08, -2.7299918e-11, -7.868051e-08, 0.29999995, -0.00062448374, 31.568893, -15.734882, 20.723978)
+
+[node name="BarrierStoneBlock_01_D63" parent="Universal Elevator UPDATED/Below Ground/Elevator shaft Of Free will" unique_id=1096470236 instance=ExtResource("14_dm46y")]
+transform = Transform3D(3.4357926e-15, 0.00012489675, 1.4999996, 1.8, 1.3113418e-08, -2.7299918e-11, -7.868051e-08, 0.29999995, -0.00062448374, 31.568893, -20.975151, 20.723978)
+
+[node name="FiringRange_Floor_A" parent="Universal Elevator UPDATED/Below Ground/Elevator shaft Of Free will" unique_id=37400175 instance=ExtResource("15_xwedc")]
+transform = Transform3D(-1, 0, 1.509958e-07, 0, 1, 0, -1.509958e-07, 0, -1, 35.21689, -20.774021, 17.523077)
+
+[node name="FiringRange_Floor_A2" parent="Universal Elevator UPDATED/Below Ground/Elevator shaft Of Free will" unique_id=1514615971 instance=ExtResource("15_xwedc")]
+transform = Transform3D(-1, 0, 1.509958e-07, 0, 1, 0, -1.509958e-07, 0, -1, 35.21689, -20.774021, 13.978655)
+
+[node name="FiringRange_Floor_A3" parent="Universal Elevator UPDATED/Below Ground/Elevator shaft Of Free will" unique_id=1884464723 instance=ExtResource("15_xwedc")]
+transform = Transform3D(-0.44, 0, 1.509958e-07, 0, 1, 0, -6.6438155e-08, 0, -1, 30.248169, -20.774021, 13.978654)
+
+[node name="FiringRange_Floor_A4" parent="Universal Elevator UPDATED/Below Ground/Elevator shaft Of Free will" unique_id=947682779 instance=ExtResource("15_xwedc")]
+transform = Transform3D(-0.44, 0, 1.509958e-07, 0, 1, 0, -6.6438155e-08, 0, -1, 30.248169, -20.774021, 17.53466)
+
+[node name="Elevator Floor Of Free Will" type="Node3D" parent="Universal Elevator UPDATED/Below Ground" unique_id=1386778211]
+transform = Transform3D(-1, 0, 1.509958e-07, 0, 1, 0, -1.509958e-07, 0, -1, -73.42255, -6.0167465, 64.74526)
+
+[node name="Elevator Doors2" type="Node3D" parent="Universal Elevator UPDATED/Below Ground/Elevator Floor Of Free Will" unique_id=709985871]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 0.010551453, -0.9854126, -0.99638367)
+
+[node name="Right Door" parent="Universal Elevator UPDATED/Below Ground/Elevator Floor Of Free Will/Elevator Doors2" unique_id=1006380980 instance=ExtResource("9_in6og")]
+transform = Transform3D(0.00039708416, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, 0.00039708416, -3.0353165, 13.723766, -28.728569)
+ObjId = 9201
+
+[node name="Left Door" parent="Universal Elevator UPDATED/Below Ground/Elevator Floor Of Free Will/Elevator Doors2" unique_id=1498822444 instance=ExtResource("9_in6og")]
+transform = Transform3D(-0.00039693515, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -0.00039693515, -7.0597763, 13.723766, -28.594936)
+ObjId = 9202
+
+[node name="FiringRange_Floor_A2" parent="Universal Elevator UPDATED/Below Ground/Elevator Floor Of Free Will" unique_id=955799045 instance=ExtResource("15_xwedc")]
+transform = Transform3D(-0.0002184771, 0, 0.79999995, 0, 0.99999994, 0, -0.54999995, 0, -0.0003177896, 6.3932114, 13.1995125, 30.476124)
+ObjId = 9203
+
+[node name="FiringRange_Mat_01" parent="Universal Elevator UPDATED/Below Ground/Elevator Floor Of Free Will" unique_id=884971179 instance=ExtResource("16_2xroj")]
+transform = Transform3D(0.00039708614, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, 0.00039708614, 5.8579407, 13.199562, 27.772243)
+
+[node name="FiringRange_FiringBarrier_03" parent="Universal Elevator UPDATED/Below Ground/Elevator Floor Of Free Will" unique_id=1411707660 instance=ExtResource("17_tlk50")]
+transform = Transform3D(0.99999994, -3.471845e-11, -0.00039713085, 0, -1, 8.742278e-08, -0.00039713085, -8.742277e-08, -0.99999994, 3.6643066, 13.756741, 30.281189)
+
+[node name="FiringRange_FiringBarrier_04" parent="Universal Elevator UPDATED/Below Ground/Elevator Floor Of Free Will" unique_id=258473822 instance=ExtResource("17_tlk50")]
+transform = Transform3D(0.99999994, 0, 0.00039713085, 0, 1, 0, -0.00039713085, 0, 0.99999994, 3.6643677, 13.986778, 30.429396)
+
+[node name="FiringRange_FiringBarrier_08" parent="Universal Elevator UPDATED/Below Ground/Elevator Floor Of Free Will" unique_id=449529435 instance=ExtResource("17_tlk50")]
+transform = Transform3D(-0.00076787546, 0, 0.9999996, 0, 1, 0, -0.9299997, 0, -0.0008256808, 6.3699074, 13.986141, 30.4508)
+
+[node name="FiringRange_FiringBarrier_10" parent="Universal Elevator UPDATED/Below Ground/Elevator Floor Of Free Will" unique_id=647053113 instance=ExtResource("17_tlk50")]
+transform = Transform3D(-0.00076787546, 0, 0.9999996, 0, 1, 0, -0.9299997, 0, -0.0008256808, 6.3699074, 13.986141, 30.4508)
+
+[node name="FiringRange_FiringBarrier_09" parent="Universal Elevator UPDATED/Below Ground/Elevator Floor Of Free Will" unique_id=1644799866 instance=ExtResource("17_tlk50")]
+transform = Transform3D(0.00036919862, -3.4698022e-11, 0.99999976, -8.130318e-08, -1, 4.74348e-16, 0.93, -8.742278e-08, -0.00039699674, 6.3688354, 13.767643, 27.744173)
+
+[node name="FiringRange_FiringBarrier_11" parent="Universal Elevator UPDATED/Below Ground/Elevator Floor Of Free Will" unique_id=1800509155 instance=ExtResource("17_tlk50")]
+transform = Transform3D(-0.00076787546, 0, 0.9999996, 0, 1, 0, -0.9299997, 0, -0.0008256808, 3.6705513, 13.986141, 30.45187)
+
+[node name="FiringRange_FiringBarrier_12" parent="Universal Elevator UPDATED/Below Ground/Elevator Floor Of Free Will" unique_id=497269608 instance=ExtResource("17_tlk50")]
+transform = Transform3D(0.00036919862, -3.4698022e-11, 0.99999976, -8.130318e-08, -1, 4.74348e-16, 0.93, -8.742278e-08, -0.00039699674, 3.6694756, 13.767643, 27.745247)
+
+[node name="FiringRange_MannequinRotation_01" parent="Universal Elevator UPDATED/Below Ground/Elevator Floor Of Free Will" unique_id=890977113 instance=ExtResource("10_k5nq8")]
+transform = Transform3D(0.99999994, 0, 0.00039713085, 0, 1, 0, -0.00039713085, 0, 0.99999994, 6.767235, 13.290276, 27.737213)
+
+[node name="FiringRange_MannequinRotation_02" parent="Universal Elevator UPDATED/Below Ground/Elevator Floor Of Free Will" unique_id=231315476 instance=ExtResource("10_k5nq8")]
+transform = Transform3D(0.99999994, 0, 0.00039713085, 0, 1, 0, -0.00039713085, 0, 0.99999994, 6.768242, 13.290276, 30.271809)
+
+[node name="FiringRange_MannequinRotation_03" parent="Universal Elevator UPDATED/Below Ground/Elevator Floor Of Free Will" unique_id=624067711 instance=ExtResource("10_k5nq8")]
+transform = Transform3D(0.99999994, 0, 0.00039713085, 0, 1, 0, -0.00039713085, 0, 0.99999994, 4.067169, 13.290276, 30.272884)
+
+[node name="FiringRange_MannequinRotation_04" parent="Universal Elevator UPDATED/Below Ground/Elevator Floor Of Free Will" unique_id=86686065 instance=ExtResource("10_k5nq8")]
+transform = Transform3D(0.99999994, 0, 0.00039713085, 0, 1, 0, -0.00039713085, 0, 0.99999994, 4.0661583, 13.290276, 27.731123)
+
+[node name="FiringRange_MannequinRotation_05" parent="Universal Elevator UPDATED/Below Ground/Elevator Floor Of Free Will" unique_id=229658516 instance=ExtResource("11_lyhaa")]
+transform = Transform3D(-0.99999994, 0, -0.00039704144, 0, 1, 0, 0.00039704144, 0, -0.99999994, 3.853897, 13.1995125, 27.926994)
+
+[node name="BarrierStoneBlock_01_D48" parent="Universal Elevator UPDATED/Below Ground/Elevator Floor Of Free Will" unique_id=312471007 instance=ExtResource("14_dm46y")]
+transform = Transform3D(3.4392335e-15, 1.3113417e-08, -1.4999996, 1.7999998, -1.3113417e-08, 0, -7.868049e-08, -0.3, -6.5567065e-08, 5.131859, 11.562218, 27.878567)
+
+[node name="Context Floor (This is whe connect it to your map)" parent="Universal Elevator UPDATED/Below Ground" unique_id=1604689585 instance=ExtResource("8_y7eu4")]
+transform = Transform3D(-1, 0, 1.509958e-07, 0, 1, 0, -1.509958e-07, 0, -1, -69.66055, 7.16512, 57.64734)
+
+[node name="AreaTrigger" parent="Universal Elevator UPDATED/Below Ground" unique_id=1051317461 node_paths=PackedStringArray("Area") instance=ExtResource("20_ty45e")]
+transform = Transform3D(-1, 0, 1.509958e-07, 0, 1, 0, -1.509958e-07, 0, -1, -79.70384, 7.2289295, 29.72641)
+ObjId = 9204
+Area = NodePath("PolygonVolume")
+
+[node name="PolygonVolume" type="Node3D" parent="Universal Elevator UPDATED/Below Ground/AreaTrigger" unique_id=1723991427]
+script = ExtResource("21_oprgd")
+points = PackedVector2Array(-2.571991, -7.3155556, -2.5678482, -4.762148, 0.057868958, -4.7904463, 0.01537323, -7.2994194)
+height = 3.0
+color = Color(0, 0.6, 0.7, 0.42)
+metadata/_custom_type_script = "uid://ck5uniw0pl6u8"
+
+[node name="AreaTrigger2" parent="Universal Elevator UPDATED/Below Ground" unique_id=734381938 node_paths=PackedStringArray("Area") instance=ExtResource("20_ty45e")]
+transform = Transform3D(-1, 0, 1.509958e-07, 0, 1, 0, -1.509958e-07, 0, -1, -79.703835, 29.458544, 29.72641)
+ObjId = 9104
+Area = NodePath("PolygonVolume")
+
+[node name="PolygonVolume" type="Node3D" parent="Universal Elevator UPDATED/Below Ground/AreaTrigger2" unique_id=1478960489]
+script = ExtResource("21_oprgd")
+points = PackedVector2Array(-2.571991, -7.3155556, -2.5678482, -4.762148, 0.057868958, -4.7904463, 0.01537323, -7.2994194)
+height = 3.0
+color = Color(0, 0.6, 0.7, 0.42)
+metadata/_custom_type_script = "uid://ck5uniw0pl6u8"
