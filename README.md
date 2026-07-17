@@ -282,9 +282,9 @@ const ELEVATOR_CONFIGS: readonly TeleportElevatorConfig[] = [
 ];
 ```
 
-### Step 5: Build and launch the experience
+### Step 5: Save and launch the experience
 
-When the game mode starts, the script waits one second and initializes every configured elevator (see the OnGameModeStarted function).
+When the game mode starts, the script initializes every configured elevator (see the OnGameModeStarted function).
 
 During initialization it:
 
