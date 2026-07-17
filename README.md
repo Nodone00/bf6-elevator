@@ -113,7 +113,7 @@ Each elevator has two floors. Each floor requires the following four objects:
 
 A complete two-floor elevator therefore requires eight configured Godot objects.
 
-**IMPORTANT**: In Godot, your doors must visually be in the open position. Set the default floor in the script (the position of the elevator on OnGameModeStarted).
+**IMPORTANT**: In Godot, your doors must visually be in the open position. Set the floor at whoch the elevator starts in the script (the position of the elevator on OnGameModeStarted).
 
 ### Bottom floor
 
@@ -151,7 +151,7 @@ The cabins should have the same:
 
 The teleport system works best when the top cabin is essentially a translated copy of the bottom cabin.
 
-**NOTE**: If you are rotating the objects in Godot, they may becomes misplace when they are moved. This is a Portal limitation of mod.MoveObjectOverTime.
+**NOTE**: If you are rotating the objects in Godot, they may become misplaced when they are moved. This is a Portal limitation of mod.MoveObjectOverTime.
 
 ### 2. Start all four doors in the open position
 
